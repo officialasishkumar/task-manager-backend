@@ -1,0 +1,6 @@
+venv
+.env
+app/__pycache__
+tasks.db
+app/routers/__pycache__
+__pycache__/
