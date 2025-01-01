@@ -12,6 +12,8 @@ router = APIRouter(
 
 @router.post("/signup", response_model=schemas.User)
 def signup(user: schemas.UserCreate, db: Session = Depends(get_db)):
+    print(f"🔒 [SIGNUP] Password entered: {user.username}")
+    print(f"🔒 [SIGNUP] Password entered: {user.email}")
     print(f"🔒 [SIGNUP] Password entered: {user.password}")
     db_user = crud.get_user_by_username(db, username=user.username)
     if db_user:
@@ -23,6 +25,7 @@ def signup(user: schemas.UserCreate, db: Session = Depends(get_db)):
 
 @router.post("/login", response_model=schemas.Token)
 def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):
+    print(f"🔒 [LOGIN] Password entered: {form_data.username}")
     print(f"🔒 [LOGIN] Password entered: {form_data.password}")
     user = crud.authenticate_user(db, username=form_data.username, password=form_data.password)
     if not user:
