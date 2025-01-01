@@ -13,7 +13,7 @@ class User(UserBase):
     id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # Token Schemas
 class Token(BaseModel):
@@ -42,7 +42,7 @@ class Task(TaskBase):
     owner_id: int
 
     class Config:
-        orm_mode = True
+        from_attributes = True
 
 # Task Summary Schema
 class TaskSummary(BaseModel):
