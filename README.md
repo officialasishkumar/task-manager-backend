@@ -77,8 +77,8 @@ The **Task Manager API** is a RESTful application designed to manage tasks for a
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-repo/task-manager-api.git
-   cd task-manager-api
+   git clone https://github.com/officialasishkumar/task-manager-backend.git
+   cd task-manager-backend
    ```
 
 2. **Set Up Environment Variables**
